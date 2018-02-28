@@ -32,14 +32,19 @@
             //     console.log(data);
             // })
 
-            var w = 500;
-            var h = 100;
+            var w = 600;
+            var h = 200;
             var barPadding = 1;
 
             var svg = d3.select("body")
                         .append("svg")
                         .attr("width", w)
                         .attr("height", h);
+
+            var xScale = d3.scaleBand()
+                           .domain(d3.range(dataset.length))
+                           .range([0, w])
+                           .paddingInner(0.05)
 
             var bar = svg.selectAll("rects")
                          .data(dataset)
