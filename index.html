@@ -49,7 +49,7 @@
             var w = 500;
             var h = 300;
             var barPadding = 1;
-            var padding = 20;
+            var padding = 30;
 
             var svg = d3.select("body")
                         .append("svg")
@@ -119,6 +119,15 @@
                .attr("class", "axis")
                .attr("transform", "translate(0," + (h - padding) + ")")
                .call(xAxis);
+
+            var yAxis = d3.axisLeft()
+                          .scale(yScale)
+                          .ticks(5);
+
+            svg.append("g")
+               .attr("class", "axis")
+               .attr("transform", "translate(" + padding + ",0)")
+               .call(yAxis);
 
         </script>
     </body>
