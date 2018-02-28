@@ -112,7 +112,8 @@
                             .attr("fill", "red");
             
             var xAxis = d3.axisBottom()
-                          .scale(xScale);
+                          .scale(xScale)
+                          .ticks(5);
 
             svg.append("g")
                .attr("class", "axis")
