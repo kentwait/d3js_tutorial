@@ -18,12 +18,12 @@
         <script type="text/javascript">
             // D3 code goes here
 
-            // var dataset = [ 5, 10, 15, 20, 25 ];
-            var dataset = [];
-            for (var i = 0; i < 25; i++) {
-                var newNumber = Math.floor(Math.random() * 30);
-                dataset.push(newNumber);
-            }
+            var dataset = [ 5, 10, 15, 20, 25 ];
+            // var dataset = [];
+            // for (var i = 0; i < 25; i++) {
+            //     var newNumber = Math.floor(Math.random() * 30);
+            //     dataset.push(newNumber);
+            // }
 
             // Load from CSV
             // d3.csv("food.csv", function(data) {
@@ -37,6 +37,18 @@
                         .append("svg")
                         .attr("width", w)
                         .attr("height", h);
+
+            var circles = svg.selectAll("circle")
+                             .data(dataset)
+                             .enter()
+                             .append("circle")
+            circles.attr("cx", function(d, i) {
+                        return (i * 50) +25;
+                   })
+                   .attr("cy", h/2)
+                   .attr("r", function(d) {
+                       return d;
+                   })
         </script>
     </body>
 </html>
